@@ -1,0 +1,38 @@
+<ion-content class="ion-padding">
+  <!-- Campo para seleccionar una imagen -->
+  <div class="image-container">
+    <ion-img [src]="imageUrl" alt="Imagen de usuario" class="avatar"></ion-img>
+    <ion-button expand="block" (click)="selectImage()">Seleccionar Imagen</ion-button>
+  </div>
+
+  <!-- Campo de nombre de usuario -->
+  <ion-item>
+    <ion-input [(ngModel)]="nombreUsuario" type="text" placeholder="Ingresa el nombre de usuario"></ion-input>
+  </ion-item>
+
+  <!-- Campo de correo electrónico -->
+  <ion-item>
+    <ion-input [(ngModel)]="correoUsuario" type="email" placeholder="Ingresa el correo electrónico"></ion-input>
+  </ion-item>
+
+  <!-- Campo de contraseña -->
+  <ion-item>
+    <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa la contraseña"></ion-input>
+  </ion-item>
+
+  <!-- Campo para repetir la contraseña -->
+  <ion-item>
+    <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Repite la contraseña"></ion-input>
+  </ion-item>
+
+  <!-- Botón para agregar el usuario -->
+  <ion-button expand="block" (click)="agregarUsuario()">
+    Agregar Usuario
+  </ion-button>
+
+  <!-- Mensaje de error debajo del botón -->
+  <ion-text color="danger" *ngIf="errorMessage">
+    <p>{{ errorMessage }}</p>
+  </ion-text>
+
+</ion-content>

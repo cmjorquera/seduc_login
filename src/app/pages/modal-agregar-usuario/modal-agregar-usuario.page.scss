@@ -1,0 +1,24 @@
+ion-header {
+    --background: #3880ff;
+  }
+  
+  ion-button {
+    --background: #3880ff;
+    --color: white;
+  }
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  ion-img.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;  // Hace la imagen circular
+    object-fit: cover;   // Asegura que la imagen se ajuste completamente al círculo
+    border: 2px solid #ccc;  // Borde opcional alrededor de la imagen
+    margin-bottom: 10px;
+    background-color: #fff; // Color de fondo para que sea visible si no hay imagen
+  }

@@ -35,3 +35,101 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+/* Estilos para la página de login */
+.login-page {
+  --background: #1a2b49; /* Fondo azul oscuro */
+}
+
+.login-container {
+  padding: 20px;
+  // display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.login-icon {
+  font-size: 60px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.login-title {
+  color: white;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+ion-item {
+  background-color: transparent;
+  --highlight-background: transparent;
+  margin-bottom: 15px;
+  width: 100%; /* Ancho completo */
+  max-width: 300px; /* Máximo ancho para que no sea demasiado grande */
+}
+
+ion-label {
+  color: white;
+}
+
+ion-input {
+  color: white;
+  --background: #1a2b49;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%; /* Asegura que ocupe el 100% del ion-item */
+  max-width: 300px; /* Establece un ancho máximo */
+}
+
+ion-input:focus {
+  outline: none;  // Elimina el contorno predeterminado
+  box-shadow: none;  // Elimina cualquier sombra en el enfoque
+}
+
+
+/* Asegura que ion-item no cambie su apariencia al enfocarse */
+ion-item[focused] {
+  border: none;
+  --background: transparent;
+}
+
+/* Para asegurar que el estilo de los inputs no cambie en dispositivos móviles */
+input, ion-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+/* Estilo para el texto de "Olvidaste la clave?" */
+.forgot-password {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #b0c4de;
+  font-size: 14px;
+}
+
+/* Estilo del botón de login */
+.login-button {
+  margin-top: 20px;
+  --background: #3b5998;
+  --color: white;
+  width: 100%; /* Asegura que ocupe el 100% del ancho disponible */
+  max-width: 300px; /* Máximo ancho para el botón */
+}
+
+/* Estilo para los términos y condiciones */
+.terms-conditions {
+  margin-top: 20px;
+  color: #b0c4de;
+  font-size: 14px;
+}
+
+ion-fab-button {
+  --background: #3b5998;
+}
+
+/* Metaetiqueta para evitar el zoom al hacer clic en los inputs en dispositivos móviles */

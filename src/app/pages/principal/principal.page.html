@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Página Principal</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Bienvenido {{ nombreUsuario }}</h2>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Bienvenido a la Página Principal</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Esta es la página a la que accedes después de iniciar sesión.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Lista de navegación -->
+  <ion-list>
+    <ion-item button (click)="navigateTo('perfil')">
+      <ion-icon name="person" slot="start"></ion-icon>
+      Perfil de Usuario
+    </ion-item>
+
+    <ion-item button (click)="navigateTo('configuracion')">
+      <ion-icon name="settings" slot="start"></ion-icon>
+      Configuración
+    </ion-item>
+
+    <ion-item button (click)="logout()">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      Cerrar Sesión
+    </ion-item>
+  </ion-list>
+</ion-content>
