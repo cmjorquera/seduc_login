@@ -1,3 +1,80 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login-page">
+  <div class="login-box">
+    <!-- Icono de usuario centrado -->
+    <ion-icon name="person-circle-outline" class="login-icon"></ion-icon>
+    
+    <!-- Mensaje de bienvenida -->
+    <h2 class="welcome-text">Bienvenido, ingresa a tu cuenta</h2>
+
+    <!-- Campo de usuario con ícono -->
+    <ion-item class="login-item">
+      <ion-icon name="person-outline" slot="start"></ion-icon>
+      <ion-input [(ngModel)]="mdl_user" type="text" placeholder="Usuario"></ion-input>
+    </ion-item>
+
+    <!-- Campo de contraseña con ícono -->
+    <ion-item class="login-item">
+      <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+      <ion-input [(ngModel)]="mdl_pass" [type]="showPassword ? 'text' : 'password'" placeholder="Contraseña"></ion-input>
+      <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" slot="end" (click)="visualizarClave()"></ion-icon>
+    </ion-item>
+
+    <!-- Mensaje de advertencia -->
+    <ion-text *ngIf="visibleWarning" color="danger" class="ion-padding-top">
+      <p>{{ warningMessage }}</p>
+    </ion-text>
+
+    <!-- Texto para contraseña olvidada -->
+    <ion-text class="forgot-password">
+      <a (click)="irCambiarPassword()">¿Olvidaste tu contraseña?</a>
+    </ion-text>
+
+    <!-- Botón para iniciar sesión -->
+    <ion-button (click)="ingresar()" expand="block" class="login-button">
+      <ion-spinner *ngIf="visibleLoading" name="lines-sharp"></ion-spinner>
+      Iniciar Sesión
+    </ion-button>
+
+    <!-- Botón flotante para agregar un nuevo usuario -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="presentModal()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+</ion-content>
+
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>Login</ion-title>
@@ -7,31 +84,14 @@
 <ion-content [fullscreen]="true" class="login-page">
   <div class="login-container">    
     <ion-icon name="person-circle-outline" class="login-icon"></ion-icon>    
-    <h1 class="login-title">Iniciar Sesión</h1>    
-
+    <h1 class="login-title">Iniciar Sesión</h1>   
     <ion-item>
       <ion-input [(ngModel)]="mdl_user" type="text" label="Ingresar usuario" labelPlacement="floating" placeholder=""></ion-input>
     </ion-item>    
-
-
-
-
-
-<ion-item>
-  <!-- Campo de contraseña -->
-  <ion-input [(ngModel)]="mdl_pass"
-             [type]="showPassword ? 'text' : 'password'"
-             label="Ingresar contraseña"
-             labelPlacement="floating"
-             placeholder=""></ion-input>
-
-  <!-- Ícono para alternar visibilidad de la contraseña -->
-  <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"
-            slot="end"
-            (click)="togglePasswordVisibility()"></ion-icon>
-</ion-item>
-
-
+    <ion-item>
+      <ion-input [(ngModel)]="mdl_pass" [type]="showPassword ? 'text' : 'password'"label="Ingresar contraseña"labelPlacement="floating" placeholder=""></ion-input>
+      <ion-icon [name]="showPassword ? 'eye' : 'eye-off'"slot="end"(click)="visualizarClave()"></ion-icon>
+    </ion-item>
     <ion-text *ngIf="visibleWarning" color="danger" class="ion-padding-top">
       <p>{{ warningMessage }}</p>
     </ion-text>    
@@ -42,14 +102,14 @@
 
 
 
-    <ion-button (click)="login()" expand="block" class="login-button">
+    <ion-button (click)="ingresar()" expand="block" class="login-button">
       <ion-spinner *ngIf="visibleLoading" name="lines-sharp"></ion-spinner>
       Entrar
     </ion-button>    
     <ion-text class="forgot-password">
-      <a href="#">¿Olvidaste tu contraseña?</a>
+      <a (click)="irCambiarPassword()">¿Olvidaste tu contraseña?</a>
     </ion-text>
-
+    
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button (click)="presentModal()">
         <ion-icon name="add"></ion-icon>
@@ -58,3 +118,8 @@
     
   </div>
 </ion-content>
+
+
+
+
+ -->

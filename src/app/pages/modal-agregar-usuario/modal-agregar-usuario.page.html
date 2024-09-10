@@ -5,22 +5,18 @@
     <ion-button expand="block" (click)="selectImage()">Seleccionar Imagen</ion-button>
   </div>
 
-  <!-- Campo de nombre de usuario -->
   <ion-item>
     <ion-input [(ngModel)]="nombreUsuario" type="text" placeholder="Ingresa el nombre de usuario"></ion-input>
   </ion-item>
 
-  <!-- Campo de correo electrónico -->
   <ion-item>
     <ion-input [(ngModel)]="correoUsuario" type="email" placeholder="Ingresa el correo electrónico"></ion-input>
   </ion-item>
 
-  <!-- Campo de contraseña -->
   <ion-item>
     <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa la contraseña"></ion-input>
   </ion-item>
 
-  <!-- Campo para repetir la contraseña -->
   <ion-item>
     <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Repite la contraseña"></ion-input>
   </ion-item>
@@ -34,5 +30,8 @@
   <ion-text color="danger" *ngIf="errorMessage">
     <p>{{ errorMessage }}</p>
   </ion-text>
+
+  <ion-button expand="block" fill="outline" (click)="volverAlLogin()">Cancelar</ion-button>
+
 
 </ion-content>

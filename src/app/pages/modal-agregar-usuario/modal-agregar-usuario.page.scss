@@ -16,9 +16,12 @@ ion-header {
   ion-img.avatar {
     width: 150px;
     height: 150px;
-    border-radius: 50%;  // Hace la imagen circular
-    object-fit: cover;   // Asegura que la imagen se ajuste completamente al círculo
-    border: 2px solid #ccc;  // Borde opcional alrededor de la imagen
+    border-radius: 50%;  /* Hace que la imagen sea circular */
+    object-fit: cover;   /* Asegura que la imagen cubra completamente el contenedor circular */
+    border: 2px solid #ccc;  /* Borde alrededor de la imagen */
     margin-bottom: 10px;
-    background-color: #fff; // Color de fondo para que sea visible si no hay imagen
+    background-color: #fff; /* Fondo blanco si no hay imagen */
+    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
   }
+  
+  

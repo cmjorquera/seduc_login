@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { Router } from '@angular/router'; // Asegúrate de importar el Router
 
 @Component({
   selector: 'app-modal-agregar-usuario',
@@ -12,12 +13,12 @@ export class ModalAgregarUsuarioPage {
   correoUsuario: string = '';   // Variable para el correo electrónico del usuario
   password: string = '';        // Variable para la contraseña
   confirmPassword: string = ''; // Variable para repetir la contraseña
-  imageUrl: string = 'assets/imagenes/sin_imagen.jpg'; // URL de la imagen predeterminada
+  imageUrl: string = 'assets/imagenes/sin_imagen.jpg'; // Imagen por defecto si no hay imagen seleccionada
 
   // Variables para los mensajes de error
   errorMessage: string = '';
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController, private router: Router) {} // Inyectar Router
 
   // Función para cerrar el modal
   dismissModal() {
@@ -71,5 +72,11 @@ export class ModalAgregarUsuarioPage {
       }
     };
     input.click(); // Simular clic en el input
+  }
+
+  // Función para volver al login
+  volverAlLogin() {
+    this.dismissModal(); // Cerrar el modal
+    this.router.navigate(['/login']); // Redirigir al login
   }
 }
