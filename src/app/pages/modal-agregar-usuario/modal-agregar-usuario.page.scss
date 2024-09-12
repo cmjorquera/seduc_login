@@ -1,6 +1,11 @@
-ion-header {
-    --background: #3880ff;
-  }
+.ion-padding{
+  --background: linear-gradient(to right, #2c3e50, #3498db); /* Fondo degradado igual que el login */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 20px;
+}
   
   ion-button {
     --background: #3880ff;

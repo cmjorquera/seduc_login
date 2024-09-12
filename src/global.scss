@@ -37,169 +37,49 @@
 @import "@ionic/angular/css/palettes/dark.system.css";
 
 /* Estilos para la página de login */
-.login-page {
-  --background: #1a2b49; /* Fondo azul oscuro */
-}
-
-.login-container {
-  padding: 20px;
-  // display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-.login-icon {
-  font-size: 60px;
-  color: white;
-  margin-bottom: 20px;
-}
-
-.login-title {
-  color: white;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
-
-ion-item {
-  background-color: transparent;
-  --highlight-background: transparent;
-  margin-bottom: 15px;
-  width: 100%; /* Ancho completo */
-  max-width: 300px; /* Máximo ancho para que no sea demasiado grande */
-}
-
-ion-label {
-  color: white;
-}
-
-ion-input {
-  color: white;
-  --background: #1a2b49;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 10px;
-  width: 100%; /* Asegura que ocupe el 100% del ion-item */
-  max-width: 300px; /* Establece un ancho máximo */
-}
-
-ion-input:focus {
-  outline: none;  // Elimina el contorno predeterminado
-  box-shadow: none;  // Elimina cualquier sombra en el enfoque
-}
-
-
-/* Asegura que ion-item no cambie su apariencia al enfocarse */
-ion-item[focused] {
-  border: none;
-  --background: transparent;
-}
-
-/* Para asegurar que el estilo de los inputs no cambie en dispositivos móviles */
-input, ion-input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-}
-
-/* Estilo para el texto de "Olvidaste la clave?" */
-.forgot-password {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  color: #b0c4de;
-  font-size: 14px;
-}
-
-/* Estilo del botón de login */
-.login-button {
-  margin-top: 20px;
-  --background: #3b5998;
-  --color: white;
-  width: 100%; /* Asegura que ocupe el 100% del ancho disponible */
-  max-width: 300px; /* Máximo ancho para el botón */
-}
-
-/* Estilo para los términos y condiciones */
-.terms-conditions {
-  margin-top: 20px;
-  color: #b0c4de;
-  font-size: 14px;
-}
-
-ion-fab-button {
-  --background: #3b5998;
-}
 
 /* Metaetiqueta para evitar el zoom al hacer clic en los inputs en dispositivos móviles */
 //segunda opcion 
-// .login-page {
-//   --background: linear-gradient(to right, #2c3e50, #3498db); /* Gradiente de fondo elegante */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-// }
+.login-page {
+  --background: linear-gradient(to right, #2c3e50, #3498db); /* Gradiente de fondo elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  padding: 20px; /* Añade márgenes en las 4 esquinas */
+}
 
-// .login-box {
-//   background-color: rgba(255, 255, 255, 0.9); /* Caja semi-transparente */
-//   padding: 40px;
-//   border-radius: 20px;
-//   max-width: 400px;
-//   width: 100%;
-//   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-//   text-align: center;
-// }
+// estos son universales 
+.login-item {
+  --background: #fff; /* Fondo blanco para los campos de entrada */
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-// .login-icon {
-//   font-size: 80px;
-//   color: #34495e; /* Azul oscuro */
-//   margin-bottom: 20px;
-// }
+.login-item ion-icon {
+  color: #3498db; /* Color azul para los íconos */
+}
 
-// .welcome-text {
-//   font-size: 18px;
-//   color: #34495e;
-//   margin-bottom: 30px;
-// }
+.login-item ion-input {
+  padding: 10px;
+  font-size: 16px;
+  color: rgb(2, 2, 2); /* Color blanco para el texto dentro del input */
 
-// .login-item {
-//   --background: #fff; /* Fondo blanco para los campos de entrada */
-//   border-radius: 15px;
-//   margin-bottom: 20px;
-//   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-// }
+}
 
-// .login-item ion-icon {
-//   color: #3498db; /* Color azul para los íconos */
-// }
+.login-item ion-input::placeholder {
+  color: black;
+}
+.login-button {
+  background-color: #2980b9; /* Azul oscuro */
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+//FIN 
 
-// .login-item ion-input {
-//   padding: 10px;
-//   font-size: 16px;
-// }
 
-// .login-button {
-//   background-color: #2980b9; /* Azul oscuro elegante */
-//   color: white;
-//   font-weight: bold;
-//   border-radius: 25px;
-//   margin-top: 20px;
-// }
 
-// .forgot-password {
-//   margin-top: 10px;
-//   color: #2980b9;
-//   font-size: 14px;
-// }
 
-// .forgot-password a {
-//   text-decoration: underline;
-// }
-
-// ion-text[color="danger"] {
-//   font-size: 14px;
-//   margin-top: 10px;
-//   color: #e74c3c; /* Rojo para el mensaje de advertencia */
-// }

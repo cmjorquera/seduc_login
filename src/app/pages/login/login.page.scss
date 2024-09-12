@@ -1,34 +1,31 @@
-// .login-page {
-//   --background: #f0f0f0;
-// }
+.login-page {
+  --background: linear-gradient(to right, #2c3e50, #3498db); /* Gradiente de fondo elegante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 20px;
+}
 
-// .login-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-//   padding: 20px;
-// }
+.login-box {
+  background-color: rgba(255, 255, 255, 0.9); /* Caja semi-transparente */
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin: 20px;
+}
 
-// .login-icon {
-//   font-size: 80px;
-//   color: #3880ff;
-//   margin-bottom: 20px;
-// }
+.login-icon {
+  font-size: 80px;
+  color: #34495e; /* Azul oscuro */
+  margin-bottom: 20px;
+}
 
-// .login-title {
-//   font-size: 1.5rem;
-//   font-weight: bold;
-//   margin-bottom: 20px;
-// }
-
-// .forgot-password {
-//   margin-top: 20px;
-//   font-size: 0.9rem;
-//   color: #3880ff;
-// }
-
-// .login-button {
-//   margin-top: 20px;
-// }
+.welcome-text {
+  font-size: 18px;
+  color: #34495e;
+  margin-bottom: 30px;
+}
