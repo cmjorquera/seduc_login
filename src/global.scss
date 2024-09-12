@@ -79,16 +79,31 @@
   margin-top: 20px;
 }
 
+
+/*************MENSAJE DE VALIDACIONES************************/
+ion-text p {
+  background: rgba(255, 0, 0, 0.2); /* Fondo del mensaje de error */
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+/* Mensaje de éxito */
+ion-text[color="success"] p {
+  background: rgba(0, 255, 0, 0.2); /* Fondo del mensaje de éxito */
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 15px;
+  color: white;
+}
+
 /* Estilos globales para mensajes de error */
-// .error-message {
-//   color: #ff4d4d; /* Color rojo para mensajes de error */
-//   font-size: 14px; /* Tamaño de fuente */
-//   margin-top: 10px;
-//   text-align: center;
-// }
-
-//FIN 
-
+.error-message {
+  color: #ff4d4d; /* Color rojo para mensajes de error */
+  font-size: 14px; /* Tamaño de fuente */
+  margin-top: 10px;
+  text-align: center;
+}
 
 
 

@@ -29,20 +29,28 @@ export class ModalAgregarUsuarioPage {
   agregarUsuario() {
     // Limpiar mensaje de error antes de las validaciones
     this.errorMessage = '';
-
+  
     // Validar que todos los campos estén llenos
     if (this.nombreUsuario.trim() === '' || this.correoUsuario.trim() === '' || 
         this.password.trim() === '' || this.confirmPassword.trim() === '') {
       this.errorMessage = 'Por favor, completa todos los campos.';
+      // Limpiar mensaje de error después de 3 segundos
+      setTimeout(() => {
+        this.errorMessage = '';
+      }, 3000);
       return;
     }
-
+  
     // Verificar si las contraseñas coinciden
     if (this.password !== this.confirmPassword) {
       this.errorMessage = 'Las contraseñas no coinciden.';
+      // Limpiar mensaje de error después de 3 segundos
+      setTimeout(() => {
+        this.errorMessage = '';
+      }, 3000);
       return;
     }
-
+  
     // Guardar las credenciales en localStorage
     const users = JSON.parse(localStorage.getItem('usuarios') || '[]');
     users.push({
@@ -51,10 +59,11 @@ export class ModalAgregarUsuarioPage {
       correoUsuario: this.correoUsuario
     });
     localStorage.setItem('usuarios', JSON.stringify(users));
-
+  
     // Cerrar el modal después de agregar el usuario
     this.dismissModal();
   }
+  
 
   // Función para seleccionar una imagen
   selectImage() {
