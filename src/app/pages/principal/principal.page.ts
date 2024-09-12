@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,28 +6,25 @@ import { Router } from '@angular/router';
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
 })
-export class PrincipalPage implements OnInit {
+export class PrincipalPage {
 
-  nombreUsuario: string = ''; // Variable para almacenar el nombre del usuario
+  nombreUsuario: string = ''; // Variable para el nombre del usuario
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Recuperar el nombre de usuario de localStorage
-    this.nombreUsuario = localStorage.getItem('nombreUsuario') || 'Invitado';
+    // Obtener el nombre del usuario desde localStorage o el servicio de autenticación
+    this.nombreUsuario = localStorage.getItem('nombreUsuario') || 'Usuario';
   }
 
-  // Función para navegar a otras páginas
   navigateTo(page: string) {
+    // Navega a la página solicitada
     this.router.navigate([`/${page}`]);
   }
 
-  // Función para cerrar sesión
-  logout() {
-    // Limpiar el localStorage (opcional)
+  cerrarSesion() {
+    // Lógica para cerrar sesión
     localStorage.removeItem('nombreUsuario');
-    
-    // Redirigir al login
     this.router.navigate(['/login']);
   }
 }

@@ -56,4 +56,16 @@ export class CambiarPasswordPage implements OnInit {
   volverAlLogin() {
     this.router.navigate(['/login']);
   }
+
+
+  navigateTo(page: string) {
+    // Navega a la página solicitada
+    this.router.navigate([`/${page}`]);
+  }
+
+  cerrarSesion() {
+    // Lógica para cerrar sesión
+    localStorage.removeItem('nombreUsuario');
+    this.router.navigate(['/login']);
+  }
 }

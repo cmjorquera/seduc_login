@@ -1,39 +1,84 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item>
+        <ion-label>Menú 1</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Menú 2</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Menú 3</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Menú 4</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Página Principal</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="logout()">Cerrar Sesión</ion-button>
+      <ion-button (click)="navigateTo('perfil')">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+      <ion-button (click)="navigateTo('configuracion')">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+      <ion-button (click)="cerrarSesion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <h2>Bienvenido {{ nombreUsuario }}</h2>
+<ion-content class="ion-padding principal-page" id="main-content">
+  <!-- Bienvenida al usuario -->
+  <div class="welcome-box">
+    <h2>Bienvenido {{nombreUsuario}}</h2>
+  </div>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Bienvenido a la Página Principal</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      Esta es la página a la que accedes después de iniciar sesión.
-    </ion-card-content>
-  </ion-card>
+  <!-- Acordeón con tres contenedores -->
+  <ion-accordion-group>
+    <!-- Contenedor 1 -->
+    <ion-accordion>
+      <ion-item slot="header">
+        <ion-label>Contenedor 1</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-img src="assets/imagenes/animal_1.jpg" alt="Imagen del Contenedor 1"></ion-img>
+      </div>
+    </ion-accordion>
 
-  <!-- Lista de navegación -->
-  <ion-list>
-    <ion-item button (click)="navigateTo('perfil')">
-      <ion-icon name="person" slot="start"></ion-icon>
-      Perfil de Usuario
-    </ion-item>
+    <!-- Contenedor 2 -->
+    <ion-accordion>
+      <ion-item slot="header">
+        <ion-label>Contenedor 2</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-img src="assets/imagenes/animal_2.jpg" alt="Imagen del Contenedor 2"></ion-img>
+      </div>
+    </ion-accordion>
 
-    <ion-item button (click)="navigateTo('configuracion')">
-      <ion-icon name="settings" slot="start"></ion-icon>
-      Configuración
-    </ion-item>
-
-    <ion-item button (click)="logout()">
-      <ion-icon name="log-out-outline" slot="start"></ion-icon>
-      Cerrar Sesión
-    </ion-item>
-  </ion-list>
+    <!-- Contenedor 3 -->
+    <ion-accordion>
+      <ion-item slot="header">
+        <ion-label>Contenedor 3</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-img src="assets/imagenes/animal_3.jpg" alt="Imagen del Contenedor 3"></ion-img>
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
 </ion-content>
