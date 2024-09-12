@@ -79,4 +79,15 @@ export class ModalAgregarUsuarioPage {
     this.dismissModal(); // Cerrar el modal
     this.router.navigate(['/login']); // Redirigir al login
   }
+
+  navigateTo(page: string) {
+    // Navega a la página solicitada
+    this.router.navigate([`/${page}`]);
+  }
+
+  cerrarSesion() {
+    // Lógica para cerrar sesión
+    localStorage.removeItem('nombreUsuario');
+    this.router.navigate(['/login']);
+  }
 }

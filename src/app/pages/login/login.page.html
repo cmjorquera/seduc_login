@@ -23,10 +23,13 @@
       <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" slot="end" (click)="visualizarClave()"></ion-icon>
     </ion-item>
 
-    <!-- Mensaje de advertencia -->
-    <ion-text *ngIf="visibleWarning" color="danger" class="ion-padding-top">
-      <p>{{ warningMessage }}</p>
-    </ion-text>
+    <!-- **********************************advertencia -->
+  <ion-text class="error-message" *ngIf="visibleWarning">
+    <p>{{ warningMessage }}</p>
+  </ion-text>
+      <!-- ******************************************-->
+
+
 
     <!-- Texto para contraseña olvidada -->
     <ion-text class="forgot-password">

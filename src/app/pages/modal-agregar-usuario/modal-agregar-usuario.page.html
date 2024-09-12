@@ -1,3 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Usuario</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="navigateTo('perfil')">
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+      <ion-button (click)="navigateTo('configuracion')">
+        <ion-icon name="settings"></ion-icon>
+      </ion-button>
+      <ion-button (click)="cerrarSesion()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content class="ion-padding">
   <!-- Campo para seleccionar una imagen -->
   <div class="image-container">
@@ -7,21 +24,25 @@
 
   <!-- Campo de nombre de usuario -->
   <ion-item class="login-item">
+    <ion-icon name="person-outline" slot="start"></ion-icon>
     <ion-input [(ngModel)]="nombreUsuario" type="text" placeholder="Ingresa el nombre de usuario"></ion-input>
   </ion-item>
 
   <!-- Campo de correo electrónico -->
   <ion-item class="login-item">
+    <ion-icon name="mail-outline" slot="start"></ion-icon>
     <ion-input [(ngModel)]="correoUsuario" type="email" placeholder="Ingresa el correo electrónico"></ion-input>
   </ion-item>
 
   <!-- Campo de contraseña -->
   <ion-item class="login-item">
+    <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
     <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa la contraseña"></ion-input>
   </ion-item>
 
   <!-- Campo para repetir la contraseña -->
   <ion-item class="login-item">
+    <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
     <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Repite la contraseña"></ion-input>
   </ion-item>
 

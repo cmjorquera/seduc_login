@@ -1,32 +1,70 @@
-.ion-padding{
-  --background: linear-gradient(to right, #2c3e50, #3498db); /* Fondo degradado igual que el login */
+.ion-padding {
+  --background: linear-gradient(to right, #2c3e50, #3498db); /* Fondo degradado */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  height: 100vh;
   padding: 20px;
 }
-  
-  ion-button {
-    --background: #3880ff;
-    --color: white;
-  }
-  .image-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  ion-img.avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;  /* Hace que la imagen sea circular */
-    object-fit: cover;   /* Asegura que la imagen cubra completamente el contenedor circular */
-    border: 2px solid #ccc;  /* Borde alrededor de la imagen */
-    margin-bottom: 10px;
-    background-color: #fff; /* Fondo blanco si no hay imagen */
-    overflow: hidden; /* Asegura que no haya desbordamiento de la imagen */
-  }
-  
-  
+
+ion-button {
+  --background: #3880ff; /* Color azul del botón */
+  --color: white;
+}
+
+/* Contenedor de la imagen del usuario */
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Estilo para la imagen circular del usuario */
+ion-img.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Estilos heredados para los input fields y botones desde el global */
+.login-item {
+  --background: #fff;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-item ion-icon {
+  color: #3498db;
+}
+
+.login-item ion-input {
+  padding: 10px;
+  font-size: 16px;
+  color: rgb(2, 2, 2); /* Texto negro */
+}
+
+.login-item ion-input::placeholder {
+  color: black;
+}
+
+/* Estilos de los botones */
+.login-button {
+  background-color: #2980b9;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+ion-button[fill="outline"] {
+  --background: transparent;
+  --border-color: white;
+  --color: white;
+}

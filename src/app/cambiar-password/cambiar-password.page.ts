@@ -26,40 +26,68 @@ export class CambiarPasswordPage implements OnInit {
 
   // Función para cambiar la contraseña
   cambiarPassword() {
+    // Limpiar mensajes anteriores
+    this.errorMessage = '';
+    this.successMessage = '';
+  
+    // Validar que los campos no estén vacíos
+    if (!this.nuevaPassword.trim() || !this.confirmPassword.trim()) {
+      this.errorMessage = 'Por favor, complete ambos campos de contraseña.';
+      this.autoHideMessage('error');
+      return;
+    }
+  
     // Validar que ambas contraseñas coincidan
     if (this.nuevaPassword !== this.confirmPassword) {
       this.errorMessage = 'Las contraseñas no coinciden.';
+      this.autoHideMessage('error');
       return;
     }
-
-    // Buscar el usuario en localStorage y actualizar su contraseña
-    const users = JSON.parse(localStorage.getItem('usuarios') || '[]');
-    const userIndex = users.findIndex((u: any) => u.nombreUsuario === this.nombreUsuario);
-
-    if (userIndex !== -1) {
-      users[userIndex].password = this.nuevaPassword;
-      localStorage.setItem('usuarios', JSON.stringify(users));
-
-      // Mensaje de éxito
-      this.successMessage = 'Contraseña cambiada exitosamente. Redirigiendo al login...';
-
-      // Redirigir al login después de cambiar la contraseña (después de 2 segundos)
+  
+    // Si el usuario es 'cristian', solo actualiza la contraseña en localStorage
+    if (this.nombreUsuario === 'cristian') {
+      // Guardar la nueva contraseña de 'cristian' en localStorage
+      localStorage.setItem('cristianPassword', this.nuevaPassword);
+  
+      this.successMessage = 'Contraseña cambiada exitosamente para Cristian. Redirigiendo al login...';
+      this.autoHideMessage('success');
+  
+      // Redirigir al login después de cambiar la contraseña
       setTimeout(() => {
         this.router.navigate(['/login']);
       }, 2000);
+  
     } else {
-      this.errorMessage = 'El usuario no existe.';
+      // Buscar el usuario en localStorage y actualizar su contraseña
+      const users = JSON.parse(localStorage.getItem('usuarios') || '[]');
+      const userIndex = users.findIndex((u: any) => u.nombreUsuario === this.nombreUsuario);
+  
+      if (userIndex !== -1) {
+        users[userIndex].password = this.nuevaPassword;
+        localStorage.setItem('usuarios', JSON.stringify(users));
+  
+        this.successMessage = 'Contraseña cambiada exitosamente. Redirigiendo al login...';
+        this.autoHideMessage('success');
+  
+        // Redirigir al login después de cambiar la contraseña
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        }, 2000);
+      } else {
+        this.errorMessage = 'El usuario no existe.';
+        this.autoHideMessage('error');
+      }
     }
   }
-
+  
+  
   // Función para volver a la pantalla de login
   volverAlLogin() {
     this.router.navigate(['/login']);
   }
 
-
+  // Función para navegar entre páginas
   navigateTo(page: string) {
-    // Navega a la página solicitada
     this.router.navigate([`/${page}`]);
   }
 
@@ -67,5 +95,16 @@ export class CambiarPasswordPage implements OnInit {
     // Lógica para cerrar sesión
     localStorage.removeItem('nombreUsuario');
     this.router.navigate(['/login']);
+  }
+
+  // Función para ocultar mensajes después de 3 segundos
+  autoHideMessage(type: 'error' | 'success') {
+    setTimeout(() => {
+      if (type === 'error') {
+        this.errorMessage = '';
+      } else {
+        this.successMessage = '';
+      }
+    }, 3000); // Ocultar el mensaje después de 3 segundos
   }
 }
