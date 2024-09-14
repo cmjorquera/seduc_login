@@ -9,17 +9,28 @@ import { Router } from '@angular/router'; // Asegúrate de importar el Router
 })
 export class ModalAgregarUsuarioPage {
 
-  nombreUsuario: string = '';   // Variable para el nombre del usuario
-  correoUsuario: string = '';   // Variable para el correo electrónico del usuario
-  password: string = '';        // Variable para la contraseña
-  confirmPassword: string = ''; // Variable para repetir la contraseña
-  imageUrl: string = 'assets/imagenes/sin_imagen.jpg'; // Imagen por defecto si no hay imagen seleccionada
+  nombreUsuario: string = '';
+  correoUsuario: string = '';
+  password: string = '';
+  confirmPassword: string = '';
+  imageUrl: string = 'assets/imagenes/sin_imagen.jpg';
 
-  // Variables para los mensajes de error
   errorMessage: string = '';
+  showPassword: boolean = false;
+  showConfirmPassword: boolean = false;
 
   constructor(private modalController: ModalController, private router: Router) {} // Inyectar Router
 
+
+    // Función para alternar la visibilidad de la contraseña
+    visualizarClave() {
+      this.showPassword = !this.showPassword;
+    }
+  
+    // Función para alternar la visibilidad de la confirmación de la contraseña
+    visualizarConfirmarClave() {
+      this.showConfirmPassword = !this.showConfirmPassword;
+    }
   // Función para cerrar el modal
   dismissModal() {
     this.modalController.dismiss();
@@ -63,7 +74,6 @@ export class ModalAgregarUsuarioPage {
     // Cerrar el modal después de agregar el usuario
     this.dismissModal();
   }
-  
 
   // Función para seleccionar una imagen
   selectImage() {
@@ -89,12 +99,15 @@ export class ModalAgregarUsuarioPage {
     this.router.navigate(['/login']); // Redirigir al login
   }
 
-  navigateTo(page: string) {
-    // Navega a la página solicitada
+  // Función para navegar a otra página
+  async navigateTo(page: string) {
+    await this.dismissModal(); // Cerrar el modal primero
     this.router.navigate([`/${page}`]);
   }
 
-  cerrarSesion() {
+  // Función para cerrar sesión
+  async cerrarSesion() {
+    await this.dismissModal(); // Cerrar el modal primero
     // Lógica para cerrar sesión
     localStorage.removeItem('nombreUsuario');
     this.router.navigate(['/login']);

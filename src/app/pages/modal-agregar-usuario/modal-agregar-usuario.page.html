@@ -37,13 +37,15 @@
   <!-- Campo de contraseña -->
   <ion-item class="login-item">
     <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-    <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa la contraseña"></ion-input>
+    <ion-input [(ngModel)]="password" [type]="showPassword ? 'text' : 'password'" placeholder="Ingresa la contraseña"></ion-input>
+    <ion-icon [name]="showPassword ? 'eye' : 'eye-off'" slot="end" (click)="visualizarClave()"></ion-icon>
   </ion-item>
 
   <!-- Campo para repetir la contraseña -->
   <ion-item class="login-item">
     <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-    <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Repite la contraseña"></ion-input>
+    <ion-input [(ngModel)]="confirmPassword" [type]="showConfirmPassword ? 'text' : 'password'" placeholder="Repite la contraseña"></ion-input>
+    <ion-icon [name]="showConfirmPassword ? 'eye' : 'eye-off'" slot="end" (click)="visualizarConfirmarClave()"></ion-icon>
   </ion-item>
 
   <!-- Botón para agregar el usuario -->
@@ -52,7 +54,7 @@
   </ion-button>
 
   <!-- Mensaje de error debajo del botón -->
-  <ion-text  class="error-message"  *ngIf="errorMessage">
+  <ion-text class="error-message" *ngIf="errorMessage">
     <p>{{ errorMessage }}</p>
   </ion-text>
 
